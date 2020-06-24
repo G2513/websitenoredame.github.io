@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>官方网站</title>
+<link rel="shortcut icon" href="icon/lemon2.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+function setCookie(cname,cvalue,exdays){
+  var d = new Date();
+  d.setTime(d.getTime()+(exdays*24*60*60*1000));
+  var expires = "expires="+d.toGMTString();
+  document.cookie = cname+"="+cvalue+"; "+expires;
+}
+function getCookie(cname){
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) {
+    var c = ca[i].trim();
+    if (c.indexOf(name)==0) { return c.substring(name.length,c.length); }
+  }
+  return "";
+}
+function checkCookie(){
+  var user=getCookie("username");
+  if (user!=""){
+    alert("欢迎 " + user + " 再次访问本站");
+  }
+  else {
+    user = prompt("请输入你的名字(可以随便输入，作为cookies保存）","");
+      if (user!="" && user!=null){
+        setCookie("username",user,30);
+      }
+  }
+}
+</script>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* body 样式 */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* 标题 */
+.header {
+    padding: 80px;
+    text-align: center;
+    background-image:url(image/minecraft-003.jpg);
+    background-size: 100%;
+    color: white;
+}
+
+/* 标题字体加大 */
+.header h1 {
+    font-size: 40px;
+}
+
+/* 导航 */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* 导航栏样式 */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* 右侧链接*/
+.navbar a.right {
+    float: right;
+}
+
+/* 鼠标移动到链接的颜色 */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* 列容器 */
+.row {  
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* 创建两个列 */
+/* 边栏 */
+.side {
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    background-color: #d0d0d0;
+    padding: 20px;
+}
+
+/* 主要的内容区域 */
+.main {   
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    background: url(image/background.jpg) no-repeat;
+    background-size: 100% 100%;
+    padding: 20px;
+}
+
+/* 测试图片 */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* 底部 */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ADADAD;
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+@media screen and (max-width: 700px) {
+    .row {   
+        flex-direction: column;
+    }
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body onload="checkCookie()">
+<div class="header" style="color: #CE0000">
+  <h1>官方网站</h1>
+  <p>Lemon's Manor</p>
+</div>
+
+<div class="navbar">
+  <a href="index.html">首页</a>
+  <a href="faq.html">问题反馈and交流群群规定</a>
+  <a href="login.html">注册（没卵用）</a>
+  <a href="mc.163.com">链接（网易我的世界官网）</a>
+</div>
+
+<div class="row">
+  <div class="side" style="color: #000000">
+      <h2>侧边菜单</h2>
+      <input id="myInput" value="输入搜索的内容...">
+<button id="myBtn" onclick="javascript:alert('想得美，搜索个毛线啊')">搜索</button>
+      <div class="fakeimg" style="height:200px;"><img src="image/logo.png" width="150" height="150"><div align="center" style="color: #CE0000">船新のLOGO！</div></div>
+      
+      
+      <h3>更多内容</h3><br>
+      <div class="fakeimg" style="height:60px;"><a href="https://github.com/Lemon8864/Lemon8864.github.io/">Github源码库</a></div><br>
+      <div class="fakeimg" style="height:60px;"><a href="faq.html">问题反馈（FAQ）</a></div><br>
+      <div class="fakeimg" style="height:60px;">暂未开放</div><br>
+        <div class="fakeimg" style="height:60px;">暂未开放</div><br>
+          <div class="fakeimg" style="height:60px;">暂未开放</div><br>
+  </div>
+  <div class="main" style="color: #0000E3">
+      <h2>留言板（假的）</h2>
+      <div class="fakeimg" style="height:200px;"><h4>没有留言<br>暂时没有开放</h4></div>
+      <p></p>
+    
+      <br>
+      <h2>公告栏</h2>
+      <div class="fakeimg" style="height:200px;">
+        <h4>交流群：828528280
+        <br>工作室成员：阿东__H，动物管理员007
+        <br>工作室介绍：我们主要还原现代建筑，也为一些人代投稿作品。</h4></div>
+      <p>持续更新中</p>
+  </div>
+  
+
+</div>
+
+<div class="footer">
+  <p>2020@Lemon's Manor All Rights Reserved 由Lemon8864设计，遵守开源协议</p>
+</div>
+
+</body>
+</html>
